@@ -151,7 +151,7 @@ func value2Field(value value, field *reflect.Value) error {
 		}
 		f = reflect.AppendSlice(f, slice)
 		val = f.Interface()
-	case len(value.Array) == 0:
+	case value.Array != nil && len(value.Array) == 0:
 		val = val
 
 	default:
